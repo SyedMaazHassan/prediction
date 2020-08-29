@@ -1,0 +1,82 @@
+
+
+
+
+<nav class="navbar navbar-expand-md bg-info navbar-dark">
+    <div class="container">
+        <i class="material-icons mb-3 text-info bg-white float-left mt-3 mr-3" style="border-radius: 100%; padding:5px; font-size:30px; cursor: pointer;" title="Go back" onclick="window.history.back()">keyboard_arrow_left</i>
+
+        <a class="navbar-brand text-left" href="{% url 'index' %}">
+            {% if user.is_authenticated %}
+
+                <h4 class="text-white">Hi {{ user.first_name }}</h4>
+
+
+            {% else %}
+
+                <h4 class="text-white mt-1">C<span style="font-size: 21px;">olor</span> P<span style="font-size: 21px;">redictions</span></h4>
+
+            {% endif %}
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse float-right text-right" style="margin: auto;" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                  
+                
+
+      
+                      {% if user.is_authenticated %}
+          
+                
+          
+                    
+                      <li class="nav-item m-1">
+                          <a href="{% url 'logout' %}" onclick="return confirm('Are you sure, you want to logout ?')">
+                              <button class="btn btn-block mx-3 bg-white">Logout</button>
+                          </a>
+          
+                      </li>
+                          
+          
+          
+          
+                      {% else %}
+          
+                      <li class="nav-item m-1">
+                          <a href="login">
+                              <button class="btn btn-block mx-3 bg-white">Login</button>
+                          </a>
+          
+                      </li>
+          
+                      <li class="nav-item m-1">
+                          <a href="signup">
+                              <button class="btn btn-block mx-3 bg-white">Signup</button>
+                          </a>
+          
+                      </li>
+                     
+          
+                     
+          
+          
+          
+          
+                      {% endif %}
+                       
+                </ul>
+                
+              </div> 
+        </div>
+        
+    </div>
+    
+  </nav>
+
+
+
+
+
